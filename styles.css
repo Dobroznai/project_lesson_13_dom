@@ -8,17 +8,6 @@ body {
   margin: 0;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  padding: 276px 81px;
-  gap: 30px;
-  background-color: rgb(26, 35, 53);
-  align-items: center; 
-  justify-content: space-between;
-}
-
 h1,
 h2,
 h3,
@@ -31,92 +20,181 @@ li {
   padding: 0;
 }
 
-.company_name {
+body {
+  font-family: Lato, Arial, sans-serif;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: #112233;
+  align-items: flex-start;
+  /* 81 px слева, 276 px сверху, 156 px снизу */
+  padding: 276px 0 156px 81px;
+  gap: 30px;
+}
+
+/*Стили "шапки" сайта */
 
 header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 100px;
-  z-index: 1;
-
+  height: 120px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
-  background-color: white;
-  font-weight: bold;
-  gap: 20px;
+  align-items: center;
+  background: #faf9ff;
+  border-bottom: 2px solid #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0 81px;
+  z-index: 10;
 }
 
-/* main {
-    display: flex;
-    padding: 276px 20px 81px ;
-    justify-content: center;
-} */
+/*Стили для лого */
 
-.form_input {
-  outline: none;
-  width: 100%;
-  height: 40px;
-  padding: 10px;
+.company_name {
+  font-weight: 700;
   font-size: 16px;
-  border: 2px solid black;
-  border-radius: 4px;
+  line-height: 24px;
+  color: #000;
+  text-decoration: none;
 }
+
+/*Стили для формы и ее компонентов */
 
 .data-form {
+  width: 590px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 400px;
-  padding: 30px;
-  border: 2px solid black;
-  border-radius: 8px;
-  background-color: white;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .form-title {
-  color: purple;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
+  color: #1c1c1c;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .input-label {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #6f6f6f;
 }
 
+.form_input,
 input[type="number"] {
-  outline: none;
   width: 100%;
-  height: 40px;
-  border: 2px solid black;
-  padding: 0 10px;
+  height: 48px;
+  padding: 12px;
   font-size: 16px;
-  border-radius: 8px;
+  line-height: 24px;
+  color: #1e1e1e;
+  background: #fff;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
 }
+
+.form_input::placeholder {
+  color: #1e1e1e;
+  opacity: 0.4;
+}
+
+.form_input:focus,
+input[type="number"]:focus {
+  outline: 2px solid #1f27f5;
+  outline-offset: 1px;
+  border-color: #1f27f5;
+}
+
+/*Стили для кнопки*/
 
 .create-button {
-  outline: none;
   width: 100%;
-  height: 50px;
-  background-color: rgb(84, 84, 247);
-  color: white;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 54px;
+  background: #1f27f5;
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  font-size: 18px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 150%;
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.create-button:hover {
-  background-color: rgb(46, 46, 206);
+.create-button:hover,
+.create-button:focus-visible {
+  opacity: 0.85;
+}
+
+/*Стили для саммари-карточки, которая создастся после сбора всех данных из формы */
+
+.info-form {
+  width: 590px;
+  min-height: 470px;
+  padding: 60px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  gap: 81px;
+}
+
+.summary-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: #1c1c1c;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-item {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #6f6f6f;
+}
+
+.summary-label {
+  font: 400 16px/130% Lato, Arial, sans-serif;
+  color: #6f6f6f;
+}
+
+.summary-value {
+  font: 700 28px/130% Lato, Arial, sans-serif;
+  color: #1c1c1c;
+}
+
+.hidden {
+  display: none;
 }

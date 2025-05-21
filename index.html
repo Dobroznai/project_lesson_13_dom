@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html>
   <head lang="en">
-    <title>Employee form</title>
+    <title>Employee Form</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" type="text/css" />
@@ -10,50 +9,59 @@
   </head>
   <body>
     <div id="root">
-      <header >
+      <header>
         <a href="../../Lesson 13/index.html" class="company_name">App Logo</a>
       </header>
       <main>
-      <form class="data-form">
-        <h1 class="form-title"></h1>
-        <div class="input-container">
-          <label class="input-label" for="first_name"> Name* </label>
-          <input
-            id="first_name"
-            class="form_input"
-            name="name"
-            type="text"
-            placeholder="John"
-            required
-          />
-        </div>
-        <div class="input-container">
-          <label class="input-label" for="surname"> Surname* </label>
-          <input
-            id="surname"
-            class="form_input"
-            name="surname"
-            type="text"
-            placeholder="Johnson"
-            required
-          />
-        </div>
-        <div class="input-container">
-          <label class="input-label" for="age"> Age* </label>
-          <input id="age" class="form_input" name="age" type="number" placeholder="25" required />
-        </div>
-        <div class="input-container">
-          <label class="input-label" for="job_position"> Job Position* </label>
-          <input
-            id="job_position"
-            class="form_input"
-            name="job_position"
-            type="text"
-            placeholder="QA"
-          />
-        </div>
-        <button class="create-button" type="submit">Create</button>
-      </form>
+        <form class="data-form">
+          <h1 class="form-title">Employee Form</h1>
+          <div class="input-container">
+            <label class="input-label" for="first_name"> Name* </label>
+            <input
+              id="first_name"
+              class="form_input"
+              name="name"
+              type="text"
+              placeholder="John"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="surname"> Surname* </label>
+            <input
+              id="surname"
+              class="form_input"
+              name="surname"
+              type="text"
+              placeholder="Johnson"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="age"> Age* </label>
+            <input
+              id="age"
+              class="form_input"
+              name="age"
+              type="number"
+              placeholder="25"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="job_position"> Job Position </label>
+            <input
+              id="job_position"
+              class="form_input"
+              name="job_position"
+              type="text"
+              placeholder="QA"
+            />
+          </div>
+          <button class="create-button" type="submit">Create</button>
+        </form>
+        <section id="infoCard" class="info-form hidden"></section>
+        <!--Создаем пустую секцию заранее(наша саммари-карточка), чтобы потом работать с ней через JS -->
       </main>
     </div>
   </body>
